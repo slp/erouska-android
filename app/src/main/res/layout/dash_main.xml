@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data class="DashMainBinding">
@@ -29,6 +30,7 @@
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:fillViewport="true"
                 app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,15 +38,15 @@
                     android:layout_height="wrap_content"
                     android:padding="8dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <Button
+                        android:id="@+id/enable_bte"
+                        android:layout_width="wrap_content"
+                        android:text="@string/enable_bte"
                         android:layout_height="wrap_content"
-                        android:text="Hello"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.core.widget.NestedScrollView>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">bt-tracing-android</string>
+    <string name="enable_bte">Enable BTE</string>
 </resources>
