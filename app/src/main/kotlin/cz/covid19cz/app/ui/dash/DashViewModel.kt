@@ -14,6 +14,6 @@ import org.kodein.di.generic.instance
 
 class DashViewModel(val app: Application) : BaseViewModel(app) {
 
-    private val bluetoothProvider: BluetoothProvider by instance()
+    val bluetoothProvider: BluetoothProvider by instance()
 
 }

@@ -4,3 +4,4 @@ import android.bluetooth.BluetoothAdapter
 
 val BluetoothAdapter.isDisabled: Boolean
     get() = !isEnabled
+

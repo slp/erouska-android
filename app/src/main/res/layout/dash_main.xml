@@ -41,7 +41,8 @@
                     <Button
                         android:id="@+id/enable_bte"
                         android:layout_width="wrap_content"
-                        android:text="@string/enable_bte"
+                        android:text="@{viewModel.bluetoothProvider.isBluetoothEnabled() ? @string/disable_bte : @string/enable_bte}"
+                        tools:text="@string/enable_bte"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

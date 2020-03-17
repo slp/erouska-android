@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import cz.covid19cz.app.R
+import cz.covid19cz.app.R.string
 import cz.covid19cz.app.databinding.DashMainBinding
 import cz.covid19cz.app.ext.withViewModel
 import cz.covid19cz.app.ui.base.BaseFragment
@@ -14,6 +15,7 @@ interface DashMainView
 
 class DashFragment : BaseFragment(),
     DashMainView {
+
     lateinit var binding: DashMainBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -23,6 +25,17 @@ class DashFragment : BaseFragment(),
 
         activity?.withViewModel<DashViewModel>(viewModelFactory) {
             binding.viewModel = this
+
+            binding.enableBte.setOnClickListener {
+                if (bluetoothProvider.isBluetoothDisabled()) {
+                    enableBluetooth()
+                    binding.enableBte.setText(string.disable_bte)
+                } else {
+                    bluetoothProvider.disableBluetooth()
+                    binding.enableBte.setText(string.enable_bte)
+                }
+
+            }
         }
 
         return binding.root

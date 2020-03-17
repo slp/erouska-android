@@ -1,12 +1,15 @@
 package cz.covid19cz.app.ui.base
 
 import android.app.Activity
+import android.bluetooth.BluetoothAdapter
 import android.content.Context
+import android.content.Intent
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import cz.covid19cz.app.di.activityModule
 import com.google.android.material.snackbar.Snackbar
+import cz.covid19cz.app.utils.REQUEST_ENABLE_BT
 import org.kodein.di.Copy
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
