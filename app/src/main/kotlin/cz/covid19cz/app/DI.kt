@@ -25,6 +25,8 @@ import cz.covid19cz.app.ui.mydata.MyDataVM
 import cz.covid19cz.app.ui.permissions.onboarding.PermissionsOnboardingVM
 import cz.covid19cz.app.ui.sandbox.SandboxVM
 import cz.covid19cz.app.ui.welcome.WelcomeVM
+import cz.covid19cz.app.ui.about.AboutVM
+import cz.covid19cz.app.utils.ResourceProvider
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -42,6 +44,7 @@ val viewModelModule = module {
     viewModel { ContactsVM() }
     viewModel { PermissionsOnboardingVM(get(), get()) }
     viewModel { MyDataVM(get(), get(), get()) }
+    viewModel { AboutVM(get()) }
 }
 
 val databaseModule = module {
@@ -80,7 +83,7 @@ val appModule = module {
     single { WakeLockManager(androidContext().getSystemService()) }
     single { androidContext().getSystemService<PowerManager>() }
     single { androidContext().getSystemService<BluetoothManager>() }
+    single { ResourceProvider(androidContext()) }
 }
-
 
 val allModules = listOf(appModule, viewModelModule, databaseModule, repositoryModule)

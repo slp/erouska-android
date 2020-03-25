@@ -1,10 +1,10 @@
 <resources>
+    <string name="covid19_link">https://covid19cz.cz/</string>
     <string name="app_name">eRouška</string>
     <string name="login_try_again">Zkusit znovu</string>
 
     <string name="notification_title">eRouška je aktivní</string>
     <string name="notification_text">Právě pomáháte chránit sebe i ostatní</string>
-
     <string name="notification_title_error">eRouška není aktivní</string>
     <string name="notification_text_bluetooth_disabled">Pro správnou funkci eRoušky je třeba zapnout bluetooth</string>
     <string name="notification_text_location_disabled">Pro správnou funkci eRoušky je třeba zapnout polohové služby</string>
@@ -13,7 +13,6 @@
     <string name="notification_action_resume">Spustit</string>
     <string name="notification_text_resumed">Aplikace běží a zaznamenává anonymně telefony ve Vašem okolí.</string>
     <string name="notification_action_pause">Pozastavit</string>
-
     <string name="notification_action_enable_bluetooth">Zapnout bluetooth</string>
     <string name="notification_action_enable_location">Zapnout polohové služby</string>
     <string name="notification_action_disable_battery_saver">Vypnout spořič baterie</string>
@@ -27,15 +26,12 @@
     <string name="enable">Povolit</string>
     <string name="bt_disabled_title">Zapněte Bluetooth</string>
     <string name="bt_disabled_desc">Bez zapnutého Bluetooth nemůžeme vytvářet seznam telefonů ve Vašem okolí.\n\nZapněte jej pomocí tlačítka \"Zapnout Bluetooth\".</string>
-
     <string name="location_disabled_title">Zapněte Polohové služby</string>
     <string name="location_disabled_desc">Bez zapnutých polohových služeb nemůžeme vytvářet seznam telefonů ve Vašem okolí. \n\nIkdyž polohová data nijak nevyužíváme, zapněte je pro správné fungování Bluetooth pomocí tlačítka \"Zapnout Polohové služby\".</string>
     <string name="enable_location_button">Zapnout Polohové služby</string>
-
     <string name="bt_location_disabled_title">Zapněte Bluetooth a Polohové služby</string>
     <string name="bt_location_disabled_desc">Bez zapnutého Bluetooth a Polohových služeb nemůžeme vytvářet seznam telefonů ve Vašem okolí. \n\nIkdyž polohová data nijak nevyužíváme, zapněte obě funkce pro správné fungování Bluetooth pomocí tlačítka \"Zapnout BT a Polohové služby\”.</string>
     <string name="enable_bt_location_button">Zapnout BT a Polohové služby</string>
-
     <string name="dashboard_title_running">Aplikace je aktivní</string>
     <string name="dashboard_title_paused">Aplikace je pozastavená</string>
     <string name="dashboard_body">Aplikace pracuje na pozadí a monitoruje okolí, prosím neukončujte ji. Nechte zapnuté Bluetooth a s telefonem pracujte jako obvykle.</string>
@@ -114,4 +110,11 @@
     <string name="share_app_title">Sdílet aplikaci eRouška</string>
     <string name="menu_share_app">Sdílet aplikaci</string>
     <string name="share_app_text">Ahoj, používám aplikaci Mobilní rouška. Nainstaluj si ji taky a společně pomožme zastavit šíření koronaviru. Aplikace sbírá anonymní údaje o telefonech v blízkosti, aby pracovníci hygieny mohli snadněji dohledat potenciálně nakažené. Čím víc nás bude, tím lépe to bude fungovat. Aplikaci najdeš na %s.</string>
+    <string name="about_intro">Aplikaci jsme vyvíjeli s důrazem na bezpečnost a ochranu soukromí, abychom jí bez obav mohli používat i my. Anonymizovaná data o Bluetooth zařízeních, které jste potkali, bez Vašeho vědomí nikam neodesíláme. Aplikace nepoužívá Vaši polohu a z nasbíraných dat nelze zjistit, kde jste se pohybovali. Věříme, že se nám společně podaří epidemii zastavit, tým eRoušky.</string>
+    <string name="about_managers">Řízení projektu</string>
+    <string name="about_app_devs">Vývoj aplikace</string>
+    <string name="about_backend_devs">Vývoj backendu</string>
+    <string name="about_ux_ui">UX/UI</string>
+    <string name="menu_about">O aplikaci</string>
+    <string name="about_toolbar_title">O aplikaci</string>
 </resources>

@@ -1,6 +1,9 @@
 package cz.covid19cz.app.ui.help
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import cz.covid19cz.app.R
 import cz.covid19cz.app.databinding.FragmentHelpBinding
@@ -31,7 +34,22 @@ class HelpFragment : BaseFragment<FragmentHelpBinding, HelpVM>(R.layout.fragment
         }
     }
 
-    fun goBack() {
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.help_loggedin, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_about -> {
+                navigate(R.id.nav_about)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun goBack() {
         navController().navigateUp()
     }
 }

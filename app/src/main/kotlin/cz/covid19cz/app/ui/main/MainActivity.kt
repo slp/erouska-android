@@ -83,6 +83,10 @@ class MainActivity :
                 navigate(R.id.nav_help, Bundle().apply { putBoolean("fullscreen", true) })
                 true
             }
+            R.id.action_about -> {
+                navigate(R.id.nav_about)
+                true
+            }
             else -> {
                 NavigationUI.onNavDestinationSelected(
                     item,

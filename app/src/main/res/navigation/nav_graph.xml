@@ -175,4 +175,9 @@
         android:name="arch.view.AlertDialogFragment"
         android:label="AlertDialogFragment" />
 
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="cz.covid19cz.app.ui.about.AboutFragment"
+        android:label="@string/about_toolbar_title"
+        tools:layout="@layout/fragment_about"/>
 </navigation>
