@@ -77,6 +77,12 @@
     <string name = "my_data_tab_all_title">All data</string>
     <string name = "my_data_tab_critical_title">Close Encounters</string>
 
+    <plurals name="my_data_today_count">
+        <item quantity="one">You\'ve been near %d eRouška user.</item>
+        <item quantity="few">You\'ve been near %d eRouška users.</item>
+        <item quantity="other">You\'ve been near %d eRouška users.</item>
+    </plurals>
+
     <string name = "my_data_column_date">Date</string>
     <string name = "my_data_column_time">Time</string>
     <string name = "my_data_column_buid">ID</string>
