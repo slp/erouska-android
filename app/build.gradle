@@ -8,12 +8,12 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "cz.covid19cz.app"
+        applicationId "es.covid19es.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.commitCount()
         versionName rootProject.ext.versionName
-        archivesBaseName = "covid19-cz"
+        archivesBaseName = "covid19-es"
         multiDexEnabled true
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
