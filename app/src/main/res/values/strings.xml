@@ -130,4 +130,9 @@
     <string name = "upload_error">Failed to upload the collected data to the servers. Please try again later.</string>
     <string name = "no_internet">Your device does not have an active Internet connection at this moment.</string>
     <string name = "automatic_logout_warning">Your account no longer exists, you have been signed out.</string>
+    <string name = "delete_data_success_text">All data has been deleted and data collection has been paused.</string>
+    <string name = "upload_data_success_text">Data successfully uploaded</string>
+    <string name = "upload_data_success_description">Thank you for helping to combat the spread of coronavirus.\n\nStay in quarantine, restrict family contact, and follow the instructions of doctors and the local health authorities.</string>
+    <string name = "delete_user_success_text">We have unregistered your phone number</string>
+    <string name = "confirmation_button_close">Close</string>
 </resources>

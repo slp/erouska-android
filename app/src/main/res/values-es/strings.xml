@@ -130,4 +130,9 @@
     <string name = "upload_error">Fallo durante la subida a los servidores de los datos recolectados. Por favor, inténtalo más tarde.</string>
     <string name = "no_internet">Tu dispositivo no tiene una conexión a Internet activa en estos momentos.</string>
     <string name = "automatic_logout_warning">Tu cuenta ya no existe, has cerrado sesión.</string>
+    <string name = "delete_data_success_text">Se han eliminados los datos y pausado la recolección.</string>
+    <string name = "upload_data_success_text">Los datos se han subido correctamente al servidor</string>
+    <string name = "upload_data_success_description">Muchas gracias por ayudarnos a combatir el coronavirus.\n\nManténgase en cuarentena, limite el contacto con otras personas, y siga las recomendaciones de los doctores y las autoridades sanitarias.</string>
+    <string name = "delete_user_success_text">Hemos desregistrado su número de teléfono</string>
+    <string name = "confirmation_button_close">Cerrar</string>
 </resources>
