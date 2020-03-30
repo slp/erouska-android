@@ -10,11 +10,13 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import cz.covid19cz.app.AppConfig
 import cz.covid19cz.app.db.SharedPrefsRepository
+import cz.covid19cz.app.ext.asHexLower
 import cz.covid19cz.app.ui.base.BaseVM
 import cz.covid19cz.app.utils.L
 import cz.covid19cz.app.utils.toText
 import kotlinx.android.synthetic.main.fragment_login.*
 import org.json.JSONObject
+import kotlin.random.Random
 
 class LoginVM(
     private val sharedPrefsRepository: SharedPrefsRepository
@@ -62,6 +64,10 @@ class LoginVM(
     }
 
     fun registerPhone(requestQueue: RequestQueue, phoneNumber: String) {
+        var buid = Random.Default.nextBytes(10).asHexLower
+        sharedPrefsRepository.putDeviceBuid(buid)
+        mutableState.postValue(SignedIn(buid))
+        /*
         val jsonObject = JSONObject()
         jsonObject.put("phone_number", phoneNumber)
         val jsonRequest = JsonObjectRequest(
@@ -86,6 +92,7 @@ class LoginVM(
             }
         )
         requestQueue.add(jsonRequest)
+        */
     }
 
     private fun getUser() {
