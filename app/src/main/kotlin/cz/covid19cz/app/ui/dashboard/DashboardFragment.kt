@@ -104,10 +104,6 @@ class DashboardFragment : BaseFragment<FragmentPermissionssDisabledBinding, Dash
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.menu_share -> {
-                shareApp()
-                true
-            }
             else -> super.onOptionsItemSelected(item)
         }
     }
