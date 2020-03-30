@@ -77,7 +77,7 @@
     <string name = "my_data_tab_all_title">Todos los datos</string>
     <string name = "my_data_tab_critical_title">Encuentros cercanos</string>
 
-    <plurals name="my_data_today_count">
+    <plurals name="my_data_count">
         <item quantity="one">Has estado cerca de %d usuario de eRouška.</item>
         <item quantity="few">Has estado cerca de %d usuarios de eRouška.</item>
         <item quantity="other">Has estado cerca de %d usuarios de eRouška.</item>
