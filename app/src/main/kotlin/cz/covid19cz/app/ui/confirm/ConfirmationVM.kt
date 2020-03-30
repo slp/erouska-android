@@ -1,14 +1,7 @@
 package cz.covid19cz.app.ui.confirm
 
 import androidx.lifecycle.viewModelScope
-import com.google.firebase.functions.FirebaseFunctionsException
-import com.google.firebase.functions.ktx.functions
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.StorageException
-import com.google.firebase.storage.ktx.storage
-import com.google.firebase.storage.ktx.storageMetadata
 import cz.covid19cz.app.AppConfig
-import cz.covid19cz.app.AppConfig.FIREBASE_REGION
 import cz.covid19cz.app.db.DatabaseRepository
 import cz.covid19cz.app.db.SharedPrefsRepository
 import cz.covid19cz.app.db.export.CsvExporter
@@ -34,9 +27,7 @@ class ConfirmationVM(
         const val UPLOAD_TIMEOUT_MILLIS = 30000L
     }
 
-    private val functions = Firebase.functions(FIREBASE_REGION)
     private var exportDisposable: Disposable? = null
-    private val storage = Firebase.storage
 
     override fun onCleared() {
         super.onCleared()
@@ -50,7 +41,7 @@ class ConfirmationVM(
                     val data = hashMapOf(
                         "buid" to prefs.getDeviceBuid()
                     )
-                    functions.getHttpsCallable("deleteUploads").call(data).await()
+                    //functions.getHttpsCallable("deleteUploads").call(data).await()
                     database.clear()
                     publish(FinishedEvent)
                 } catch (e: Exception) {
@@ -64,7 +55,7 @@ class ConfirmationVM(
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 try {
-                    functions.getHttpsCallable("deleteUser").call().await()
+                    //functions.getHttpsCallable("deleteUser").call().await()
                     database.clear()
                     prefs.clear()
                     Auth.signOut()
@@ -86,6 +77,7 @@ class ConfirmationVM(
                     val data = hashMapOf(
                         "buid" to buid
                     )
+                    /*
                     val active = functions.getHttpsCallable("isBuidActive").call(data).await().data as? Boolean ?: false
                     if (!active) {
                         publish(LogoutEvent)
@@ -97,6 +89,7 @@ class ConfirmationVM(
                             handleError(it)
                         })
                     }
+                    */
                 }
                 catch (e: Exception) {
                     handleError(e)
@@ -106,6 +99,7 @@ class ConfirmationVM(
     }
 
     private fun uploadToStorage(csv: ByteArray) {
+        /*
         val fuid = Auth.getFuid()
         val timestamp = System.currentTimeMillis()
         val buid = prefs.getDeviceBuid()
@@ -121,10 +115,12 @@ class ConfirmationVM(
         }.addOnFailureListener {
             handleError(it)
         }
+        */
     }
 
     private fun handleError(e: Throwable) {
         L.e(e)
+        /*
         if (e is FirebaseFunctionsException && e.code == FirebaseFunctionsException.Code.UNAUTHENTICATED) {
             publish(LogoutEvent)
         } else if (e is StorageException && e.errorCode == StorageException.ERROR_NOT_AUTHENTICATED) {
@@ -132,5 +128,6 @@ class ConfirmationVM(
         } else {
             publish(ErrorEvent(e))
         }
+        */
     }
 }

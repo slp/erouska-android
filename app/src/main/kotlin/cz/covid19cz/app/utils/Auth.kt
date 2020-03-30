@@ -2,7 +2,6 @@ package cz.covid19cz.app.utils
 
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseAuth
 import cz.covid19cz.app.R
 import cz.covid19cz.app.db.SharedPrefsRepository
 import cz.covid19cz.app.service.CovidService
@@ -12,23 +11,24 @@ import org.koin.core.inject
 
 object Auth: KoinComponent {
 
-    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val prefs: SharedPrefsRepository by inject()
 
     fun isSignedIn(): Boolean {
-        return auth.currentUser != null && prefs.getDeviceBuid() != null
+        return prefs.getDeviceBuid() != null
     }
 
     fun getFuid(): String {
-        return checkNotNull(auth.currentUser?.uid)
+        //return checkNotNull(auth.currentUser?.uid)
+        return "fuid"
     }
 
     fun getPhoneNumber(): String {
-        return checkNotNull(auth.currentUser?.phoneNumber)
+        //return checkNotNull(auth.currentUser?.phoneNumber)
+        return "phoneNumber"
     }
 
     fun signOut() {
-        auth.signOut()
+        //auth.signOut()
     }
 }
 
@@ -36,7 +36,7 @@ fun BaseFragment<*,*>.logoutWhenNotSignedIn() {
     with(requireContext()){
         startService(CovidService.stopService(this))
     }
-    Auth.signOut()
+    //Auth.signOut()
 
     val nav = findNavController()
     nav.popBackStack(R.id.nav_graph, false)

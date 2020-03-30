@@ -6,7 +6,6 @@ import android.os.PowerManager
 import androidx.core.content.getSystemService
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.room.Room
-import com.google.firebase.analytics.FirebaseAnalytics
 import cz.covid19cz.app.bt.BluetoothRepository
 import cz.covid19cz.app.db.*
 import cz.covid19cz.app.db.export.CsvExporter
@@ -79,7 +78,6 @@ val appModule = module {
     single { BluetoothStateReceiver() }
     single { ScreenStateReceiver() }
     single { BatterSaverStateReceiver() }
-    single { FirebaseAnalytics.getInstance(androidApplication()) }
     single { LocalBroadcastManager.getInstance(androidApplication()) }
     single { WakeLockManager(androidContext().getSystemService()) }
     single { androidContext().getSystemService<PowerManager>() }

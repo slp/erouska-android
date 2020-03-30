@@ -22,10 +22,7 @@ class App : BaseApp(), KoinComponent{
         setupKoin()
         // SQLScout - Database viewer for Android Studio
         SqlScoutServer.create(this, packageName)
-        AppConfig.fetchRemoteConfig()
-        if (BuildConfig.DEBUG) {
-            getDatabaseSize()
-        }
+        getDatabaseSize()
     }
 
     private fun setupKoin() {

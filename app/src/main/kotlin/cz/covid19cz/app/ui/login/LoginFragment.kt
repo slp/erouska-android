@@ -8,29 +8,32 @@ import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.observe
 import androidx.navigation.NavOptions.Builder
-import com.google.firebase.auth.PhoneAuthProvider
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
 import cz.covid19cz.app.AppConfig
 import cz.covid19cz.app.R
 import cz.covid19cz.app.databinding.FragmentLoginBinding
 import cz.covid19cz.app.ui.base.BaseFragment
-import cz.covid19cz.app.utils.Text
-import cz.covid19cz.app.utils.focusAndShowKeyboard
-import cz.covid19cz.app.utils.hideKeyboard
-import cz.covid19cz.app.utils.setOnDoneListener
+import cz.covid19cz.app.utils.*
 import kotlinx.android.synthetic.main.fragment_login.*
-import java.util.concurrent.TimeUnit
+import org.json.JSONObject
 
 
 class LoginFragment :
     BaseFragment<FragmentLoginBinding, LoginVM>(R.layout.fragment_login, LoginVM::class) {
 
     private lateinit var views: List<View>
+    private lateinit var requestQueue: RequestQueue
 
     override fun onStart() {
         super.onStart()
         viewModel.state.observe(this) {
             updateState(it)
         }
+        requestQueue = Volley.newRequestQueue(this.context)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -181,15 +184,10 @@ class LoginFragment :
     }
 
     private fun verifyPhoneNumber() {
+        L.e("verifyPhoneNumber")
         show(login_progress)
         val phoneNumber = login_verif_phone_input.text.toString()
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-            phoneNumber, // Phone number to verify
-            AppConfig.smsTimeoutSeconds, // Timeout duration
-            TimeUnit.SECONDS, // Unit of timeout
-            requireActivity(), // Activity (for callback binding)
-            viewModel.verificationCallbacks
-        )
+        viewModel.registerPhone(requestQueue, phoneNumber)
     }
 
     private fun show(vararg views: View) {
