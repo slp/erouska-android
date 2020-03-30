@@ -78,9 +78,9 @@
     <string name = "my_data_tab_critical_title">Close Encounters</string>
 
     <plurals name="my_data_count">
-        <item quantity="one">You\'ve been near %d eRouška user.</item>
-        <item quantity="few">You\'ve been near %d eRouška users.</item>
-        <item quantity="other">You\'ve been near %d eRouška users.</item>
+        <item quantity="one">Over the last %d days, you\'ve been near %d eRouška user.</item>
+        <item quantity="few">Over the last %d days, you\'ve been near %d eRouška users.</item>
+        <item quantity="other">over the last %d days, you\'ve been near %d eRouška users.</item>
     </plurals>
 
     <string name = "my_data_column_date">Date</string>
