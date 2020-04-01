@@ -36,6 +36,7 @@
             <nav-graph android:value="@navigation/nav_graph" />
         </activity>
 
+        <!--
         <service
             android:name=".service.CovidService"
             android:enabled="true"
@@ -44,7 +45,17 @@
                 android:name="longScanForcingEnabled"
                 android:value="true" />
         </service>
+        -->
 
+        <service
+            android:name=".service.MessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!--
         <receiver
             android:name=".receiver.OnBootReceiver"
             android:enabled="true"
@@ -58,6 +69,7 @@
         <receiver android:name=".receiver.BluetoothStateReceiver"/>
         <receiver android:name=".receiver.LocationStateReceiver"/>
         <receiver android:name=".receiver.ScreenStateReceiver"/>
+        -->
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"

@@ -161,6 +161,7 @@ class DashboardFragment : BaseFragment<FragmentPermissionssDisabledBinding, Dash
     }
 
     private fun tryStartBtService() {
+        /*
         checkRequirements(
             {
                 ContextCompat.startForegroundService(
@@ -171,6 +172,7 @@ class DashboardFragment : BaseFragment<FragmentPermissionssDisabledBinding, Dash
             { navigate(R.id.action_nav_dashboard_to_nav_bt_disabled) }
 
         )
+         */
     }
 
     private fun shareApp() {

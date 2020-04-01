@@ -1,6 +1,9 @@
 package cz.covid19cz.app.ui.login
 
+import android.app.NotificationManager
 import android.content.Context
+import android.os.Build
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.android.volley.Request
@@ -8,7 +11,9 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.google.firebase.messaging.FirebaseMessaging
 import cz.covid19cz.app.AppConfig
+import cz.covid19cz.app.R
 import cz.covid19cz.app.db.SharedPrefsRepository
 import cz.covid19cz.app.ext.asHexLower
 import cz.covid19cz.app.ui.base.BaseVM

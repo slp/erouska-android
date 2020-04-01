@@ -2,11 +2,13 @@ package cz.covid19cz.app.ui.dashboard
 
 import androidx.lifecycle.Observer
 import arch.livedata.SafeMutableLiveData
+import com.google.firebase.messaging.FirebaseMessaging
 import cz.covid19cz.app.bt.BluetoothRepository
 import cz.covid19cz.app.db.SharedPrefsRepository
 import cz.covid19cz.app.ui.base.BaseVM
 import cz.covid19cz.app.ui.dashboard.event.DashboardCommandEvent
 import cz.covid19cz.app.utils.Auth
+import cz.covid19cz.app.utils.L
 
 class DashboardVM(
     val bluetoothRepository: BluetoothRepository,
@@ -25,12 +27,22 @@ class DashboardVM(
     }
 
     override fun onCleared() {
-        serviceRunning.removeObserver(serviceObserver)
+        //serviceRunning.removeObserver(serviceObserver)
         super.onCleared()
     }
 
     fun init() {
-        serviceRunning.observeForever(serviceObserver)
+        serviceRunning.value = true;
+        //serviceRunning.observeForever(serviceObserver)
+
+        FirebaseMessaging.getInstance().subscribeToTopic("btscan")
+            .addOnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    L.d("Firebase subscription failed")
+                } else {
+                    L.d("Firebase subscribed")
+                }
+            }
     }
 
     fun pause() {
